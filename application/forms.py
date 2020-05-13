@@ -9,7 +9,7 @@ class BookForm(FlaskForm):
             Length(min=2, max=30)
         ]
     )
-    author_name = StringField('Authorst Name',
+    author_name = StringField('Authors Name',
         validators = [
             DataRequired(),
             Length(min=2, max=30)
@@ -28,4 +28,35 @@ class BookForm(FlaskForm):
         ]
     )
     submit = SubmitField('Submit')
+
+
+class MovieForm(FlaskForm):
+    movie_name = StringField('Movie Name',
+        validators = [
+            DataRequired(),
+            Length(min=2, max=30)
+        ]
+    )
+    director_name = StringField('Directors Name',
+        validators = [
+            DataRequired(),
+            Length(min=2, max=30)
+        ]
+    )
+    genre = StringField('Genre',
+        validators = [
+            DataRequired(),
+            Length(min=2, max=100)
+        ]
+    )
+    short_content = StringField('Description',
+        validators = [
+            DataRequired(),
+            Length(min=2, max=1000)
+        ]
+    )
+    submit = SubmitField('Submit')
+
+
+
 

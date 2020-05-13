@@ -1,7 +1,7 @@
 from flask import Flask, render_template, redirect, url_for
 from application import app, db
 from application.models import Books, Movies
-from application.forms import BookForm
+from application.forms import BookForm, MovieForm
 
 @app.route('/')
 @app.route('/home')
@@ -51,3 +51,27 @@ def post():
         print(form.errors)
 
     return render_template('post.html', title='Post', form=form)
+
+
+@app.route('/dost', methods=['GET', 'POST'])
+def dost():
+    form = MovieForm()
+    if form.validate_on_submit():
+        postData2 = Movies(
+            movie_name = form.movie_name.data,
+            director_name = form.director_name.data,
+            genre = form.genre.data,
+            short_content = form.short_content.data
+        )
+
+        db.session.add(postData2)
+        db.session.commit()
+
+        return redirect(url_for('movie'))
+
+    else:
+        print(form.errors)
+
+    return render_template('dost.html', title='Dost', form=form)
+
+
