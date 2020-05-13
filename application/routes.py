@@ -1,10 +1,13 @@
-from flask import Flask, render_template
-from application import app
+from flask import Flask, render_template, redirect, url_for
+from application import app, db
+from application.models import Books, Movies
+from application.forms import BookForm
 
 @app.route('/')
 @app.route('/home')
 def home():
-    return render_template('home.html', title="Home Page")
+    bookData=Books.query.all()
+    return render_template('home.html', title="Home Page", posts=bookData)
 
 @app.route('/about')
 def about():
@@ -14,16 +17,37 @@ def about():
 
 @app.route('/book')
 def book():
-    return render_template('book.html', title="Book Page")
+    bookData=Books.query.all()
+    return render_template('book.html', title="Book Page", posts=bookData)
 
 
 @app.route('/movie')
 def movie():
-    return render_template('movie.html', title="Movie Page")
+    movieData=Movies.query.all()
+    return render_template('movie.html', title="Movie Page", dosts=movieData)
 
 
 @app.route('/register')
 def register():
     return render_template('register.html', title="Register Page")
 
+@app.route('/post', methods=['GET', 'POST'])
+def post():
+    form = BookForm()
+    if form.validate_on_submit():
+        postData = Books(
+            book_name = form.book_name.data,
+            author_name = form.author_name.data,
+            genre = form.genre.data,
+            short_content = form.short_content.data
+        )
 
+        db.session.add(postData)
+        db.session.commit()
+
+        return redirect(url_for('book'))
+
+    else:
+        print(form.errors)
+
+    return render_template('post.html', title='Post', form=form)

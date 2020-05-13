@@ -1,9 +1,13 @@
-{%extends "layout.html"%}
+{% extends 'layout.html' %}
+{% block body_content %}
 
-{%block body_content%}
 
-                {{title}}
-
-                this is my movie page
-
-{%endblock%}
+    {% for post in dosts %}
+        <div>
+            <h3>{{ post.title }}</h3>
+            <p><b> - Book name:</b>{{ post.movie_name }}</p>
+            <p><b> - Authors name:</b>{{ post.director_name }}</p>
+            <p> -Genre {{ post.genre }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block body_content %}
+<div class = 'form'>
+<form method='POST' action=''>
+	{{ form.hidden_tag() }}
+	{{ form.book_name.label }}
+	{{ form.book_name }}
+	<br>
+	{{ form.author_name.label }}
+        {{ form.author_name }}
+	<br>
+	{{ form.genre.label }}
+        {{ form.genre }}
+	<br>
+	{{form.short_content.label }}
+        {{form.short_content}}
+ 	<br>
+            {{ form.submit }}
+        </form>
+    </div>
+
+
+
+
+{% endblock %}
