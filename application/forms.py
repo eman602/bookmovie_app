@@ -76,6 +76,33 @@ class BookUpdate(FlaskForm):
 
 
 
+class BookUpdate2(FlaskForm):
+    book_name = StringField('Book Name',
+        validators = [
+            DataRequired(),
+            Length(min=2, max=30)
+        ]
+    )
+
+    author_name = StringField('Authors Name',
+        validators = [
+            DataRequired(),
+            Length(min=2, max=30)
+        ]
+    )
+    genre = StringField('Genre',
+        validators = [
+            DataRequired(),
+            Length(min=2, max=100)
+        ]
+    )
+    short_content = StringField('Description',
+        validators = [
+            DataRequired(),
+            Length(min=2, max=1000)
+        ]
+    )
+    submit = SubmitField('Submit')
 
 
 

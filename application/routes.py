@@ -1,7 +1,7 @@
 from flask import Flask, render_template, redirect, url_for
 from application import app, db
 from application.models import Books, Movies
-from application.forms import BookForm, MovieForm, BookUpdate
+from application.forms import BookForm, MovieForm, BookUpdate, BookUpdate2
 
 @app.route('/')
 @app.route('/home', methods=['GET', 'POST'])
@@ -78,5 +78,44 @@ def dost():
         print(form.errors)
 
     return render_template('dost.html', title='Dost', form=form)
+
+
+app.route('/update', methods=['GET', 'POST'])
+def addingupdates():
+    form = BookUpdate2()
+    if form.validate_on_submit():
+        postData = Books(
+            book_name = form.book_name.data,
+            author_name = form.author_name.data,
+            genre = form.genre.data,
+            short_content = form.short_content.data
+        )
+        db.session.commit()
+    elif request.method=='GET':
+        form.book_name.data = book_name
+        form.author_name.data = author_name
+        form.genre.data = genre
+        form.short_content.data = short_content
+        
+        return redirect(url_for('book'))
+    return render_template('update.html', title='Dost', form=form)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
