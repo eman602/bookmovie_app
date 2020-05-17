@@ -4,6 +4,15 @@
 
 		{{title}}
 
-		this is my website
+		<div class = 'form'>
+<form method='POST' action=''>
+       <div>
+	 {{ form.hidden_tag() }}
+        {{ form.search_book.label }}
+        {{ form.search_book }}
+        <br>
+            {{ form.submit }}
+        </form>
+    </div>
 
 {%endblock%}

@@ -1,4 +1,5 @@
 from application import db
+from sqlalchemy.orm import relationship
 
 class Books(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -6,6 +7,7 @@ class Books(db.Model):
     author_name = db.Column(db.String(30), nullable=False)
     genre = db.Column(db.String(100), nullable=False, unique=True)
     short_content = db.Column(db.String(500), nullable=False, unique=True)
+    child=relationship("Movies", uselist=False, back_populates="parent")
 
     def __repr__(self):
         return ''.join([
@@ -20,7 +22,8 @@ class Movies(db.Model):
     director_name = db.Column(db.String(30), nullable=False)
     genre = db.Column(db.String(100), nullable=False, unique=True)
     short_content = db.Column(db.String(500), nullable=False, unique=True)
-    
+    book_id=db.Column(db.Integer, db.ForeignKey('books.id'))
+    parent=relationship("Books", back_populates="child")
     def __repr__(self):
         return ''.join([
             'User: ', self.movie_name, ' ', self.director_name, '\r\n',
