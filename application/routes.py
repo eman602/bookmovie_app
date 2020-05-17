@@ -61,7 +61,8 @@ def dost():
             movie_name = form.movie_name.data,
             director_name = form.director_name.data,
             genre = form.genre.data,
-            short_content = form.short_content.data
+            short_content = form.short_content.data,
+            book_id=form.book_id.data
         )
 
         db.session.add(postData2)

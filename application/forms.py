@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField
-from wtforms.validators import DataRequired, Length
+from wtforms import StringField, SubmitField, IntegerField
+from wtforms.validators import DataRequired, Length, Optional
 
 class BookForm(FlaskForm):
     book_name = StringField('Book Name',
@@ -55,6 +55,12 @@ class MovieForm(FlaskForm):
             Length(min=2, max=1000)
         ]
     )
+
+    book_id = IntegerField('Book ID if movie is based on a book!',
+        validators=[Optional()]
+       
+    )
+
     submit = SubmitField('Submit')
 
 
