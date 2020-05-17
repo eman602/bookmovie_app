@@ -64,5 +64,34 @@ class MovieForm(FlaskForm):
     submit = SubmitField('Submit')
 
 
+class BookUpdate(FlaskForm):
+    search_book=StringField("Book name",
+        validators =[
+            DataRequired(),
+            Length(min=2, max=1000)
+        ]
+    )
+
+    submit = SubmitField('Search')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

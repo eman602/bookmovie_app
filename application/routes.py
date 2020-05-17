@@ -1,13 +1,17 @@
 from flask import Flask, render_template, redirect, url_for
 from application import app, db
 from application.models import Books, Movies
-from application.forms import BookForm, MovieForm
+from application.forms import BookForm, MovieForm, BookUpdate
 
 @app.route('/')
-@app.route('/home')
+@app.route('/home', methods=['GET', 'POST'])
 def home():
-    bookData=Books.query.all()
-    return render_template('home.html', title="Home Page", posts=bookData)
+    form=BookUpdate()
+    if form.validate_on_submit():
+        book_details=Books.query.filter_by(book_name=form.search_book.data).first()
+        if book_details:
+            return redirect(url_for('update'))
+    return render_template('home.html', title="Home Page", form=form)
 
 @app.route('/about')
 def about():
@@ -27,9 +31,9 @@ def movie():
     return render_template('movie.html', title="Movie Page", dosts=movieData)
 
 
-@app.route('/register')
-def register():
-    return render_template('register.html', title="Register Page")
+@app.route('/update')
+def update():
+    return render_template('update.html', title="UpdatePage")
 
 @app.route('/post', methods=['GET', 'POST'])
 def post():
