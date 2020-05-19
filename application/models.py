@@ -23,7 +23,7 @@ class Movies(db.Model):
     genre = db.Column(db.String(100), nullable=False, unique=True)
     short_content = db.Column(db.String(500), nullable=False, unique=True)
     book_id=db.Column(db.Integer, db.ForeignKey('books.id'))
-    parent=relationship("Books", back_populates="child")
+    parent=relationship("Books", back_populates="child", cascade='delete')
     def __repr__(self):
         return ''.join([
             'User: ', self.movie_name, ' ', self.director_name, '\r\n',

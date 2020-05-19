@@ -1,26 +1,65 @@
 from flask import Flask, render_template, redirect, url_for, request
 from application import app, db
 from application.models import Books, Movies
-from application.forms import BookForm, MovieForm, BookUpdate, BookUpdate2
+from application.forms import BookForm, MovieForm, BookDelete, MovieDelete, BookUpdate2
 
 @app.route('/')
-@app.route('/home', methods=['GET', 'POST'])
+@app.route('/home')
 def home():
-    form=BookUpdate()
+    form=BookDelete()
+   # form2=MovieDelete()       
+   # if form.validate_on_submit():
+    #    book_details=Books.query.filter_by(book_name=form.search_book.data).first()
+     #   db.session.delete(book_details)
+      #  db.session.commit()
+       # return redirect(url_for('book'))              
+    return render_template('home.html', title="Home Page", form=form)
+
+
+@app.route('/update', methods=['GET', 'POST'])
+def update():
+    form = BookUpdate2()
+    
+    if form.validate_on_submit():
+       # request.method=='GET'       
+        name=form.book_name.data 
+        testing=Books.query.filter_by(book_name=name).first()
+    
+        testing.author_name=form.author_name.data
+        testing.author_name=form.author_name.data
+        testing.genre=form.genre.data
+        testing.short_content=form.short_content.data
+        db.session.commit()
+        return redirect(url_for('book'))
+    return render_template('update.html', title="update Page", form=form)
+
+
+@app.route('/book_delete', methods=['GET', 'POST'])
+def book_delete():
+    form=BookDelete()
     if form.validate_on_submit():
         book_details=Books.query.filter_by(book_name=form.search_book.data).first()
         if book_details:
-            return redirect(url_for('about'))        
+            db.session.delete(book_details)
+            db.session.commit()
+            return redirect(url_for('book'))
+        else:
+            print(form.errors)
     return render_template('home.html', title="Home Page", form=form)
 
-@app.route('/about', methods=['GET', 'POST'])
-def about():
-    testing=Books.query.filter_by(book_name='Hunger Games').first()
-    form = BookUpdate2()
-    if request.method == 'GET' :
-        
-        form.book_name.data=request.form.get("search_book")
-    return render_template('update.html', title="update Page", form=form)
+
+@app.route('/Movie_delete', methods=['GET', 'POST'])
+def Movie_delete():
+    form=MovieDelete()
+    if form.validate_on_submit():
+        movie_details=Movies.query.filter_by(movie_name=form.search_movie.data).first()
+        if movie_details:
+            db.session.delete(movie_details)
+            db.session.commit()
+            return redirect(url_for('movie'))
+        else:
+            print(form.errors)
+    return render_template('moviedelete.html', title="Movie Page", form=form)
 
 
 

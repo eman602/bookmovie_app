@@ -64,7 +64,7 @@ class MovieForm(FlaskForm):
     submit = SubmitField('Submit')
 
 
-class BookUpdate(FlaskForm):
+class BookDelete(FlaskForm):
     search_book=StringField("Book name",
         validators =[
             DataRequired(),
@@ -72,7 +72,18 @@ class BookUpdate(FlaskForm):
         ]
     )
 
-    submit = SubmitField('Search')
+    submit = SubmitField('Delete')
+
+
+class MovieDelete(FlaskForm):
+    search_movie=StringField("Movie name",
+        validators =[
+            DataRequired(),
+            Length(min=2, max=1000)
+        ]
+    )
+
+    submit = SubmitField('Delete')
 
 
 
@@ -85,22 +96,16 @@ class BookUpdate2(FlaskForm):
     )
 
     author_name = StringField('Authors Name',
-        validators = [
-            DataRequired(),
-            Length(min=2, max=30)
-        ]
+          validators=[Optional()]
+
     )
     genre = StringField('Genre',
-        validators = [
-            DataRequired(),
-            Length(min=2, max=100)
-        ]
+          validators=[Optional()]
+
     )
     short_content = StringField('Description',
-        validators = [
-            DataRequired(),
-            Length(min=2, max=1000)
-        ]
+          validators=[Optional()]
+
     )
     submit = SubmitField('Submit')
 
