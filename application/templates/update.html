@@ -1,11 +1,11 @@
-{%extends "layout.html"%}
+{% extends 'layout.html' %}
 
-{%block body_content%}
+{% block body_content %} 
 
                 <br>this is my update page</br>
-
-		<div class = 'form'>
-<form method='POST' action=''>
+		  <div class = 'form'>
+        <form method='POST' action='home'>
+        <div class='form_group'>
         {{ form.hidden_tag() }}
         {{ form.book_name.label }}
         {{ form.book_name }}
@@ -19,9 +19,11 @@
         {{form.short_content.label }}
         {{form.short_content}}
         <br>
+        </div>
             {{ form.submit }}
         </form>
     </div>
+		                
 
 
-{%endblock%}
+{% endblock %}
