@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block body_content %}
+
+                <div class = 'form'>
+  <form method='POST' action="Movie_delete">
+
+       <div>
+         {{ form.hidden_tag() }}
+        {{ form.search_movie.label }}
+        {{ form.search_movie }}
+        <br>
+            {{ form.submit }}
+        </form>
+    </div>
+</div>
+
+{% endblock %}

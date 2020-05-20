@@ -1,18 +1,22 @@
-{%extends "layout.html"%}
+{% extends "layout.html" %}
 
-{%block body_content%}
+{% block body_content %}
 
 		{{title}}
 
 		<div class = 'form'>
-<form method='POST' action=''>
+  <form method='POST' action='book_delete'>
+
        <div>
-	 {{ form.hidden_tag() }}
+	{{ form.hidden_tag() }}	 
         {{ form.search_book.label }}
         {{ form.search_book }}
         <br>
             {{ form.submit }}
         </form>
     </div>
+</div>
 
-{%endblock%}
+
+
+{% endblock %}
