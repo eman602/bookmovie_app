@@ -18,6 +18,6 @@ cd /var/lib/jenkins/workspace/Bookmovie_app
  
 pip3 install -r requirements.txt
  
- python3 /var/lib/jenkins/workspace/flask-project/app.py
+ python3 /var/lib/jenkins/workspace/bookmovie_app/app.py
 
 
