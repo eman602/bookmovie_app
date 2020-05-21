@@ -18,5 +18,5 @@ cd /var/lib/jenkins/workspace/Bookmovie_app
  
 source ~/.bashrc
  
-gunicorn --bind=0.0.0.0:5000 app:app
+gunicorn --bind=0.0.0.0:5000 application:app
 
