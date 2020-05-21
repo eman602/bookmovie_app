@@ -10,14 +10,14 @@ sudo apt install python3-venv -y
  
 python3 -m venv venv
  
-pip3 install -r requirements.txt
+source ~/.bashrc
 
 source /var/lib/jenkins/workspace/Bookmovie_app/venv/bin/activate
  
+pip3 install -r requirements.txt
  
 cd /var/lib/jenkins/workspace/Bookmovie_app
  
-source ~/.bashrc
  
 gunicorn --bind=0.0.0.0:5000 application:app
 
