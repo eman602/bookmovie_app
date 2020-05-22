@@ -24,13 +24,15 @@ def update():
        # request.method=='GET'       
         name=form.book_name.data 
         testing=Books.query.filter_by(book_name=name).first()
-    
-        testing.author_name=form.author_name.data
-        testing.author_name=form.author_name.data
-        testing.genre=form.genre.data
-        testing.short_content=form.short_content.data
-        db.session.commit()
-        return redirect(url_for('book'))
+        if testing:
+            testing.author_name=form.author_name.data
+            testing.author_name=form.author_name.data
+            testing.genre=form.genre.data
+            testing.short_content=form.short_content.data
+            db.session.commit()
+            return redirect(url_for('book'))
+        else:
+            return render_template('update.html', title="update Page", form=form)
     return render_template('update.html', title="update Page", form=form)
 
 
