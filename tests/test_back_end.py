@@ -111,6 +111,14 @@ class TestViews(TestBase):
         response = self.client.get(url_for('book_delete'))
         self.assertEqual(response.status_code, 200)
 
+    def testbook_updatepage_view(self):
+        """
+        Test that homepage is accessible without login
+        """
+        response = self.client.get(url_for('update'))
+        self.assertEqual(response.status_code, 200)
+
+
 
 class TestPosts(TestBase):
     def test_add_new_book(self):
@@ -178,4 +186,24 @@ class TestPosts(TestBase):
             )
     
             self.assertIn(b'mytest', response.data)
+
+    def test_delete_a_book(self):
+        
+        with self.client:
+            response = self.client.post(
+                url_for('book_delete'),
+                data=dict(
+                    search_book ="tejkkst"
+                    
+                ),
+                follow_redirects = False
+            )
+            self.assertIn(b'tejkkst', response.data)
     
+    def test_homepage(self):
+        response = self.client.post(
+            url_for('home')
+        )
+        self.assertNotIn(b'book name', response.data)
+
+

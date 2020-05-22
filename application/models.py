@@ -29,11 +29,3 @@ class Movies(db.Model):
             'User: ', self.movie_name, ' ', self.director_name, '\r\n',
             'Title: ', self.genre, '\r\n', self.short_content
             ])
-
-
-
-
-
-
-
-
