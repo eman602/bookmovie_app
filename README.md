@@ -7,6 +7,8 @@ Trello : https://trello.com/b/jzxsxgkl/movie-and-book-app
 ## Content
 * [Brief](#brief)
 * [Methods](#methods)
+* [Architecture](#architecture)
+* [CI Pipeline](#ci-pipeline)
 * [Tracking my Project](#tracking-my-project)
 * [Risk Assessment ](#risk-assessment)
 * [Testing](#testing)
@@ -50,6 +52,28 @@ The aim of this project as specified in the brief is to create a CRUD applicatio
  * Update information about a movie or book 
 
  * Delete movie or book 
+
+## Architecture
+#### Database Structure
+
+##### Before
+![erd2](https://user-images.githubusercontent.com/64255340/82837018-d3592b80-9ebf-11ea-9271-0b79c1780bd6.png)
+
+I had initially planned to use the image above as my ERD however, I wanted to insure I had implemented what would allow me to achieve my MVP, and after which I could then build upon it. 
+
+##### Current
+![erd1](https://user-images.githubusercontent.com/64255340/82837033-e1a74780-9ebf-11ea-8881-831d231daeee.png)
+
+This image is currently what the structure of the database is built on as as shown, we have the foreign key of in the Movies table implemented from the primary key of the Books table, hence allowing for a relationship to occur between the tables.
+
+#### User Case
+![usercase](https://user-images.githubusercontent.com/64255340/82837084-000d4300-9ec0-11ea-8376-a00455007ada.png)
+
+This is an outline description of what is possible for the user to be able to do and also how the computer will respond to their request. Within the app, the users request will be recognised by the server through either the POST Method or the GET method.
+
+## CI Pipeline
+![CIpipeline](https://user-images.githubusercontent.com/64255340/82837352-aa856600-9ec0-11ea-9422-c6cfc59ed580.png)
+
 
 ## Tracking my Project
 the link for my Trello can be found at : https://trello.com/b/jzxsxgkl/movie-and-book-app
