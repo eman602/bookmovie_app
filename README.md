@@ -4,6 +4,9 @@ Risk Assessment : https://onedrive.live.com/edit.aspx?resid=67C6B66CC3D9FFE8!105
 
 Trello : https://trello.com/b/jzxsxgkl/movie-and-book-app
 
+## Content
+* [Brief](#brief)
+
 ## Brief
 The aim of this project as specified in the brief is to create a CRUD application with utilisation of supporting tools. It must have methodologies and technologies that encapsulates all core modules covered during the training. It is then to be assessed by the trainers who will assess the capabilities and concepts that were taught and assess the project against S.F.I.A. 
  In order to meet the requirements of the project I must display the following:
