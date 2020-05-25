@@ -6,6 +6,17 @@ Trello : https://trello.com/b/jzxsxgkl/movie-and-book-app
 
 ## Content
 * [Brief](#brief)
+* [Methods](#methods)
+* [Tracking my Project](#tracking-my-project)
+* [Risk Assessment ](#risk-assessment)
+* [Testing](#testing)
+* [Web application display of the app](#web-application-display-of-the-app)
+* [Issues with Application](#issues-with-application)
+* [Improvements](#improvements)
+* [Document By](#document-by)
+
+
+
 
 ## Brief
 The aim of this project as specified in the brief is to create a CRUD application with utilisation of supporting tools. It must have methodologies and technologies that encapsulates all core modules covered during the training. It is then to be assessed by the trainers who will assess the capabilities and concepts that were taught and assess the project against S.F.I.A. 
@@ -69,7 +80,7 @@ This signifies the tasks which I am currently doing.
 #### Done 
 This refers to tasks which are completed. 
 
-#### Risk Assessment 
+## Risk Assessment 
 The link for the risk assessment can be found - https://onedrive.live.com/edit.aspx?resid=67C6B66CC3D9FFE8!105&cid=1371f661-24ed-4557-b5e7-a18b1901bf6b&ithint=file%2cxlsx&wdOrigin=OFFICECOM-WEB.MAIN.MRU 
 
 It is also shown below: -
@@ -88,7 +99,7 @@ In my own code, I achieved 99% coverage although my initial aim was to achieve 1
 
 For my own app, I wrote 23 different tests. 
 
-## Web application display of the app. 
+## Web application display of the app 
 ![DeleteMovie](https://user-images.githubusercontent.com/64255340/82816985-0c7ba680-9e94-11ea-8d98-2fe7bfa7ef66.png)
 
 This is the Delete Page of the side allowing an individual to enter a Book name into the form and if the book placed is within the database, they are given the ability to delete the book from the list. Upon pressing that button, they would be directed to the Book page where they would be able to see that indeed the Book has been removed from the database.  
