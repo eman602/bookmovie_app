@@ -17,6 +17,9 @@ Trello : https://trello.com/b/jzxsxgkl/movie-and-book-app
 * [Web application display of the app](#web-application-display-of-the-app)
 * [Issues with Application](#issues-with-application)
 * [Improvements](#improvements)
+* [Licensing](#licensing)
+* [Acknowledgments](#acknowledgments)
+* [Contributors](#contributors)
 * [Author](#author)
 
 
@@ -176,8 +179,25 @@ This page allows the user to update items in the database. Hence when they enter
 
 * Another improvement is allowing a voting system on the books or movies that individuals will add to the page. 
 
+## Licensing
+Copyright 2020 Emmanuel Agyapong
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+## Acknowledgements
+I will like to express an appreciation to Ben Hesketh, Luke Benson and Syed Ahmed for their constructive suggestions during the dewvleopment of this project. 
+
+## Contributors 
+Emmanuel Agyapong
+
 ## Author
 Emmanuel Agyapong
+
+
 
 
 
