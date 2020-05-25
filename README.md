@@ -15,7 +15,7 @@ Trello : https://trello.com/b/jzxsxgkl/movie-and-book-app
 * [Web application display of the app](#web-application-display-of-the-app)
 * [Issues with Application](#issues-with-application)
 * [Improvements](#improvements)
-* [Document By](#document-by)
+* [Author](#author)
 
 
 
@@ -73,7 +73,12 @@ This is an outline description of what is possible for the user to be able to do
 
 ## CI Pipeline
 ![CIpipeline](https://user-images.githubusercontent.com/64255340/82837352-aa856600-9ec0-11ea-9422-c6cfc59ed580.png)
+The continous integration pipeline begins at the  python level in which the source code is constructed in VS code and tested using python3 app.py. After the code successfully worked in the development server, the code is then pushed up to github under the repository name bookmovie_app. Currently there are 3 branches being used and the most updated one being the testing branch. This branch has a connection through webHook with hence any changes made here will be picked up by the CI tool Jenkins and automatically configured and built. 
 
+In my CI pipeline, I planned to have Jenkins run my automatic test as shown however, in reality, all code was tested using unit testing in pytest before the code was pushed up to git hub and integrated into the app. Jenkins will install the flask and import all the necessary modules. 
+
+Code is checked by Jenkins and if it is sufficient, it will then be built without an error message being sent. 
+At the very beginning of the process, all the required work are put on Trello and the required work is recieved from Trello and once is it completed, it is then updated in Trello and another piece of work is taken.
 
 ## Tracking my Project
 the link for my Trello can be found at : https://trello.com/b/jzxsxgkl/movie-and-book-app
@@ -169,7 +174,7 @@ This page allows the user to update items in the database. Hence when they enter
 
 * Another improvement is allowing a voting system on the books or movies that individuals will add to the page. 
 
-## Document By
+## Author
 Emmanuel Agyapong
 
 
