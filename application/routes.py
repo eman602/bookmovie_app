@@ -13,7 +13,7 @@ def home():
      #   db.session.delete(book_details)
       #  db.session.commit()
        # return redirect(url_for('book'))              
-    return render_template('home.html', title="Home Page", form=form)
+    return render_template('home.html', title="update Page", form=form)
 
 
 @app.route('/update', methods=['GET', 'POST'])
@@ -48,7 +48,7 @@ def book_delete():
             return redirect(url_for('book'))
         else:
             print(form.errors)
-    return render_template('home.html', title="Home Page", form=form)
+    return render_template('home.html', title="Delete Page", form=form)
 
 
 @app.route('/Movie_delete', methods=['GET', 'POST'])
