@@ -64,7 +64,7 @@ The aim of this project as specified in the brief is to create a CRUD applicatio
 ##### Before
 ![erd2](https://user-images.githubusercontent.com/64255340/82837018-d3592b80-9ebf-11ea-9271-0b79c1780bd6.png)
 
-I had initially planned to use the image above as my ERD however, I wanted to insure I had implemented what would allow me to achieve my MVP, and after which I could then build upon it. 
+I had initially planned to use the image above as my ERD however, I wanted to insure I had implemented what would allow me to achieve my MVP, and after which I could then build upon it and improve. 
 
 ##### Current
 ![erd1](https://user-images.githubusercontent.com/64255340/82837033-e1a74780-9ebf-11ea-8881-831d231daeee.png)
