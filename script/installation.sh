@@ -1,24 +1,13 @@
-#!/usr/bin/env bash
+#!/bin/bash
  
-sudo apt update -y
  
-sudo apt install python3 -y
- 
-sudo apt install python3-pip -y
- 
-sudo apt install python3-venv -y
- 
-python3 -m venv venv
- 
-source ~/.bashrc
+sudo cp etc/systemd/system/flask.service /etc/systemd/system/
 
-source /var/lib/jenkins/workspace/Bookmovie_app/venv/bin/activate
+sudo systemctl daemon-reload
 
-cd /var/lib/jenkins/workspace/Bookmovie_app
- 
+sudo systemctl enable flask.service
+
+source venv/bin/activate
+
 pip3 install -r requirements.txt
- 
-pytest --cov ./application
-
-gunicorn --bind=0.0.0.0:5000 application:app
 

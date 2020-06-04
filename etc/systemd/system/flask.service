@@ -2,9 +2,7 @@
 Description=SFIA-1 Project
 [Service]
 User=jenkins
-ExecStart=/var/lib/jenkins/workspace/Bookmovie_app/script/installation.sh
-
- 
+ExecStart=/var/lib/jenkins/workspace/pipeline_1/script/installation.sh
 
 [Install]
 WantedBy=multi-user.target

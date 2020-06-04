@@ -1,0 +1,33 @@
+version: '3.7'
+services:
+  flask-app:
+    image: bookmovieapp
+    build: .
+    ports:
+    - target: 5000
+      published: 5000
+      protocol: tcp
+    environment:
+        BOOK_MOVIE_DB_URI: ${BOOK_MOVIE_DB_URI}
+        SECRET_KEY: ${SECRET_KEY}
+  database:
+    image: mysql:5.7
+     
+    ports:
+    - target: 3306
+      published: 3306
+      protocol: tcp
+    volumes:
+    - type: volume
+      source: bookvolume
+      target: /var/lib/mysql
+    environment:
+        MYSQL_ROOT_PASSWORD: ${PASSWORD}
+        MYSQL_DATABASE: ${DATABASE}
+
+volumes:
+  bookvolume:
+
+
+        
+
