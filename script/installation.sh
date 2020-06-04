@@ -8,6 +8,6 @@ sudo systemctl daemon-reload
 sudo systemctl enable flask.service
 
 source venv/bin/activate
-source ~/bashrc
+
 pip3 install -r requirements.txt
 
