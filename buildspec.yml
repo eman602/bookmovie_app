@@ -1,0 +1,16 @@
+version: 0.2
+
+phases: 
+    install:
+        runtime-versions:
+            java: openjdk8
+        commands: 
+            - sh 'chmod +x ./script/*'
+    build:
+        commands: 
+            - sh './script/before_installation.sh'
+            - sh './script/installation.sh'
+            - sh 'sudo systemctl restart flask.service'
+artifacts:
+    files:
+        - target/<APP_NAME>-0.0.1-SNAPSHOT.jar
