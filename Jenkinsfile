@@ -24,7 +24,7 @@ pipeline{
     stage('setting up variables and starting application'){
         steps{
             source ~/bashrc
-            source /var/lib/jenkins/workspace/pipeline_1/venv/bin/activate
+            
             python3 /var/lib/jenkins/workspace/pipeline_1/app.py
         }
     }
