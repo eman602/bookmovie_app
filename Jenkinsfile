@@ -6,7 +6,7 @@ pipeline {
                 retry(3) {
                     echo "hello therre with the etry"
                 }
-                timeout(time: 3. unit: 'MINUTES') {
+                timeout(time: 3, unit: 'MINUTES') {
                     echo  "another one"
 
             }
