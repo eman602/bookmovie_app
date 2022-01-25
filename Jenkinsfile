@@ -25,7 +25,7 @@ pipeline{
         steps{
             source ~/bashrc
             
-            python3 /var/lib/jenkins/workspace/pipeline_1/app.py
+            python3 app.py
         }
     }
     }
