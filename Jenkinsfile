@@ -1,6 +1,6 @@
 pipeline{
     agent any
-
+    stages{
     stage('installing pip and other stuff'){
         steps {
             apt update -y
@@ -9,7 +9,7 @@ pipeline{
         }
     stage('setting up the system'){
         steps{
-            sudo cp /etc/systemd/system/flask.service /etc/systemd/system
+            sudo cp /etc/systemd/system/flask.service /etc/systemd/system/
             sudo systemctl daemon-reload
             sudo systemctl enable flask.service
 
@@ -31,4 +31,5 @@ pipeline{
     }
     }
     }
+}
 }
