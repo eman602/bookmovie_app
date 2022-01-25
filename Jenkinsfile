@@ -1,4 +1,4 @@
-pipeline{
+pipeline {
     agent any
     stages{
     stage('installing pip and other stuff'){
