@@ -9,7 +9,7 @@ pipeline{
         }
     stage('setting up the system'){
         steps{
-            sudo cp etc/systemd/system/flask.service /etc/systemd/system/
+            sudo cp etc/systemd/system/flask.service /etc/systemd/system
             sudo systemctl daemon-reload
             sudo systemctl enable flask.service
 
