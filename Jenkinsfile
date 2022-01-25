@@ -3,7 +3,11 @@ pipeline {
     stages {
         stage('installing pip and other stuff') {
             steps {
-               uname
+                retry(3) {
+                    echo "hello therre with the etry"
+                }
+                timeout(time: 3. unit: 'MINUTES') {
+                    echo  "another one"
 
             }
         }
