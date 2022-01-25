@@ -3,7 +3,8 @@ pipeline {
     stages {
         stage('installing pip and other stuff') {
             steps {
-               echo "hello1"
+               apt update -y
+               apt install pyhthon3 python3-venv python3-pip -y 
 
             }
         }
