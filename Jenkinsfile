@@ -8,8 +8,8 @@ pipeline {
         }
         stage("making environment"){
             steps{
-                sh './script/before_installation.sh'
-                sh './script/installation.sh'
+                sh 'apt update -y'
+                sh 'sudo apt install python3 python3-venv python3-pip -y'
             }
         }
         stage('Running the application'){
