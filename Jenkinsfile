@@ -8,7 +8,7 @@ pipeline {
         }
         stage("making environment"){
             steps{
-                sh 'apt update -y'
+                sh 'sudo apt update -y'
                 sh 'sudo apt install python3 python3-venv python3-pip -y'
             }
         }
