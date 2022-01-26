@@ -1,34 +1,23 @@
 pipeline {
     agent any
     stages {
-        stage('installing pip and other stuff') {
-            steps {
-                retry(3) {
-                    echo "hello therre with the etry"
-                }
-                timeout(time: 3, unit: 'MINUTES') {
-                    echo  "another one"
-
+        stage('Making sure environment is built'){
+            steps{
+                sh 'chmod +x ./script/*'
             }
         }
-        stage('setting up the system') {
-            steps {
-                echo "hello2"
+        stage("making environment"){
+            steps{
+                sh './script/before_installation.sh'
+                sh './script/installation.sh'
             }
         }
-        stage('setting up further environment') {
-            steps {
-                echo "hello3"
+        stage('Running the application'){
+            steps{
+                sh 'sudo systemctl restart flask.service'
             }
         }
-
-        stage('setting up variables and starting application') {
-            steps {
-            echo "hello4"
-            }
     }
-    
-    
-    }
+
 }
 
