@@ -8,7 +8,7 @@ pipeline {
         }
         stage("making environment"){
             steps{
-                sh 'apt install curl'
+                sh 'sudo apt install curl'
                 sh 'ls -la'
                 sh 'uname'
             }
