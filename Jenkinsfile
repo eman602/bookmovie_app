@@ -8,8 +8,9 @@ pipeline {
         }
         stage("making environment"){
             steps{
-                sh ' update'
-                sh ' upgrade --avialable && sync'
+                sh 'ls'
+                sh 'ls -la'
+                sh 'uname'
             }
         }
         stage('Running the application'){
