@@ -8,8 +8,8 @@ pipeline {
         }
         stage("making environment"){
             steps{
-                sh 'apk update'
-                sh 'apk upgrade --avialable && sync'
+                sh ' update'
+                sh ' upgrade --avialable && sync'
             }
         }
         stage('Running the application'){
