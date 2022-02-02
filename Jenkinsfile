@@ -8,13 +8,13 @@ pipeline {
         }
         stage("making environment"){
             steps{
-                sh 'sudo apt update -y'
-                sh 'sudo apt install python3 python3-venv python3-pip -y'
+                sh 'apk update'
+                sh 'apk upgrade --avialable && sync'
             }
         }
         stage('Running the application'){
             steps{
-                sh 'sudo systemctl restart flask.service'
+                sh 'lxc info alpine-www01e'
             }
         }
     }
