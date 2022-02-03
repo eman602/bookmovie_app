@@ -16,6 +16,7 @@ pipeline {
         stage('Running the application'){
             steps{
                 sh 'sudo systemctl restart flask.service'
+                archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
             }
         }
             
