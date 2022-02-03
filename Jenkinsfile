@@ -20,7 +20,7 @@ pipeline {
         
         stage("running created tsts"){
             steps{
-                sh 'python tests/test_back_end.py'
+                sh 'python3 tests/test_back_end.py'
             }
         }     
     }
