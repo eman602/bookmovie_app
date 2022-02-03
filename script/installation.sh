@@ -3,9 +3,9 @@
  
 cp etc/systemd/system/flask.service /etc/systemd/system/
 
-systemctl daemon-reload
+sudo systemctl daemon-reload
 
-systemctl enable flask.service
+sudo systemctl enable flask.service
 
 source venv/bin/activate
 
