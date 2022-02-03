@@ -8,8 +8,8 @@ pipeline {
         }
         stage("making environment"){
             steps{
-                sh 'sudo ./script/before_installation.sh'
-                sh 'sudo ./script/installation.sh'
+                sh './script/before_installation.sh'
+                sh './script/installation.sh'
             }
         }
         stage('Running the application'){
