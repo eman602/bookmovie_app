@@ -1,5 +1,6 @@
 pipeline {
     agent any
+    
     stages {
         stage('Making sure environment is built'){
             steps{
@@ -17,12 +18,7 @@ pipeline {
                 sh 'sudo systemctl restart flask.service'
             }
         }
-        
-        stage("running created tsts"){
-            steps{
-                sh 'python3 tests/test_back_end.py'
-            }
-        }     
+            
     }
 
 }
