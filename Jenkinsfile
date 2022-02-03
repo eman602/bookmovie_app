@@ -25,9 +25,9 @@ pipeline {
                 expression { 
                     currentBuild.result == null || currentBuild.result == 'SUCCESS'
                     sh ' echo successfully'
-                }
+             }
             
-            }
+        }
          
             
     }
