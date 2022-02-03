@@ -1,7 +1,7 @@
 #!/bin/bash
  
  
-cp etc/systemd/system/flask.service /etc/systemd/system/
+sudo cp etc/systemd/system/flask.service /etc/systemd/system/
 
 sudo systemctl daemon-reload
 
