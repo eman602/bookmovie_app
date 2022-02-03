@@ -17,6 +17,12 @@ pipeline {
                 sh 'sudo systemctl restart flask.service'
             }
         }
+        
+        stage("running created tsts"){
+            steps{
+                sh 'python tests/test_back_end.py'
+            }
+        }     
     }
 
 }
