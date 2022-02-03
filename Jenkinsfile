@@ -8,14 +8,13 @@ pipeline {
         }
         stage("making environment"){
             steps{
-                sh 'sudo apt install curl'
-                sh 'ls -la'
-                sh 'uname'
+                sh './script/before_installation.sh'
+                sh './script/installation.sh'
             }
         }
         stage('Running the application'){
             steps{
-                sh 'lxc info alpine-www01e'
+                sh 'sudo systemctl restart flask.service'
             }
         }
     }
