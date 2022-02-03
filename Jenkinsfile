@@ -16,9 +16,19 @@ pipeline {
         stage('Running the application'){
             steps{
                 sh 'sudo systemctl restart flask.service'
-                archiveArtifacts artifacts: '**/Flask/*.jar', fingerprint: true 
+                
             }
         }
+         
+        stage('checking run was succesfful'){
+            when {
+                expression { 
+                    currentBuild.result == null || currentBuild.result == 'SUCCESS'
+                    sh ' echo successfully'
+                }
+            
+            }
+         
             
     }
 
