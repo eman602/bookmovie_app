@@ -7,7 +7,7 @@ pipeline {
         stage('Making sure environment is built'){
             steps{
                 sh 'chmod +x ./script/*'
-                echo $BITBUCKETT
+                sh 'echo $BITBUCKETT'
             }
         }
         stage("making environment"){
