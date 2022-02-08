@@ -4,11 +4,11 @@ pipeline {
     stages {
         stage('Making sure environment is built'){
             environment {
-                BITBUCKETT = credentials('hello-emmanuel-just-checking')
+                BITBUCKET_COMMON_CREDS = credentials('hello-emmanuel-just-checking')
             }
             steps{
                 sh 'chmod +x ./script/*'
-                sh 'echo $BITBUCKETT'
+                sh 'echo $BITBUCKET_COMMON_CREDS'
             }
         }
         stage("making environment"){
