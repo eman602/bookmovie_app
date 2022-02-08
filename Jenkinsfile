@@ -1,10 +1,13 @@
 pipeline {
     agent any
-    
+    environment {
+        BITBUCKETT = credentials('hello emmanuel just checking')
+    }
     stages {
         stage('Making sure environment is built'){
             steps{
                 sh 'chmod +x ./script/*'
+                echo $BITBUCKETT
             }
         }
         stage("making environment"){
