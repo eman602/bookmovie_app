@@ -8,7 +8,7 @@ pipeline {
             }
             steps{
                 sh 'chmod +x ./script/*'
-                sh 'echo $BITBUCKET_COMMON_CREDS'
+                sh "echo $BITBUCKET_COMMON_CREDS"
             }
         }
         stage("making environment"){
